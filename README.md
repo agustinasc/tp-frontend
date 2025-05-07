@@ -29,35 +29,58 @@ Permite a los usuarios explorar productos, filtrarlos por nombre o categoría, a
 
 ## 📁 Estructura general
 
-src/
+📁 src/
 ├── components/
-├───────AddProduct.jsx
-├───────AddUsuario.jsx
-├───────Cart.jsx
-├───────EditProduct.jsx
-├───────EditUsuario.jsx
-├───────Footer.jsx
-├───────Loader.jsx
-├───────MapaPanaderia.jsx
-├───────Navbar.jsx
-├───────ProductCard.jsx
-├── components/
-├───────CartContext.jsx
-├───────ThemeContext.jsx
-├───────UserContext.jsx
+│   ├── AddProduct.jsx
+│   ├── AddUsuario.jsx
+│   ├── Cart.jsx
+│   ├── EditProduct.jsx
+│   ├── EditUsuario.jsx
+│   ├── Footer.jsx
+│   ├── Loader.jsx
+│   ├── MapaPanaderia.jsx
+│   ├── Navbar.jsx
+│   ├── ProductCard.jsx
+│
+├── context/
+│   ├── CartContext.jsx
+│   ├── ThemeContext.jsx
+│   ├── UserContext.jsx
+│
 ├── pages/
-├───────Contact.jsx
-├───────Home.jsx
-├───────HomePage.jsx
-├───────Login.jsx
-├───────Nosotros.jsx
-├───────NotFound.jsx
-├───────ProductDetails.jsx
-├───────ProductList.jsx
-├───────Perfil.jsx
-├───────Usuarios.jsx
+│   ├── Contact.jsx
+│   ├── Home.jsx
+│   ├── HomePage.jsx
+│   ├── Login.jsx
+│   ├── Nosotros.jsx
+│   ├── NotFound.jsx
+│   ├── ProductDetails.jsx
+│   ├── ProductList.jsx
+│   ├── Perfil.jsx
+│   ├── Usuarios.jsx
+│
 ├── routes/
-├───────routes.jsx
+│   └── routes.jsx
+
+
+## 🌐 DEPLOY: 
+
+https://tp-panaderia.netlify.app
+
+## 🔧 INSTALACIÓN Y EJECUCIÓN LOCAL
+
+1. Clonar el repositorio:
+    https://github.com/agustinasc/tp-frontend
+
+2. Instalar dependencias:
+   npm install
+
+3. Ejecutar servidor de desarrollo:
+   npm run dev
+
+## 📦 DEPENDENCIAS CLAVE
+
+npm install axios react-router-dom react-hook-form yup react-toastify sweetalert2 leaflet react-leaflet
 
 
 ## ✨ Créditos

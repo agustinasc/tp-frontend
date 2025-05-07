@@ -31,7 +31,7 @@ export const Navbar = () => {
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-6">
-          <li className="relative">
+          <li className="relative hidden md:block focus-within:group group">
             <Link to="/"
               className={`font-semibold ${theme === "oscuro" ? "text-white" : "text-black"} hover:text-yellow-800 px-4 py-2`}
             >
@@ -44,7 +44,7 @@ export const Navbar = () => {
               Menú <i className="bi bi-chevron-down ml-1"></i>
             </button>
             {menuOpen && (
-              <ul className="absolute left-0 mt-2 w-40 rounded shadow bg-white z-10">
+              <ul className="absolute left-0 mt-2 w-40 rounded shadow bg-white z-10 opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 pointer-events-none    group-focus-within:pointer-events-auto group-hover:pointer-events-auto transition-opacity">
                 <li><Link to="/nosotros" className="block px-4 py-2 hover:bg-gray-100">Nosotros</Link></li>
                 <li><Link to="/contacto" className="block px-4 py-2 hover:bg-gray-100">Contacto</Link></li>
                 <li><Link to="/perfil" className="block px-4 py-2 hover:bg-gray-100">Perfiles</Link></li>
