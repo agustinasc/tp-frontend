@@ -31,7 +31,7 @@ export const CartProvider = ({children}) => {
         const fetchProductos = async () => {
             try {
                 setLoading(true)
-              const response = await axios.get(`${API_BASE}`);
+              const response = await axios.get(`${API_BASE}/productos`);
               setProducts(response.data); 
             } catch (error) {
               console.error('Error al traer productos:', error);
@@ -46,7 +46,7 @@ export const CartProvider = ({children}) => {
       /* PARA RECARGAR DESPUES DE ALGUNA MODIFICACION */
       const reloadProducts = async () => {
         try {
-          const response = await axios.get(`${API_BASE}`);
+          const response = await axios.get(`${API_BASE}/productos`);
           setProducts(response.data);
         } catch (error) {
           console.error("Error al recargar productos", error);
