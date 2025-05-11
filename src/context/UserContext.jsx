@@ -53,7 +53,7 @@ export const UserProvider = ({ children }) => {
         localStorage.removeItem('rol'); // elimina el rol
         navigate('/')
     }
-    /* PARA GUARDAR EL TOKEN */
+    /* PARA GUARDAR EL TOKEN y ayuda para generar los headers de autorizacion en las peticiones a la API */
     const getAuthHeaders = () => {
         const token = localStorage.getItem('token');
         return { Authorization: `Bearer ${token}` };

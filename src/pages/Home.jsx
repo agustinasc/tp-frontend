@@ -3,8 +3,8 @@ import HomePage from './HomePage'
 
 const Home = () => {
     return (
-      <div className=" h-[80vh] bg-cover bg-center flex flex-col items-center justify-center text-white" style={{ backgroundImage: "url('/fotoLocal.jpg')" }}>
-        <div className="bg-[#5E272D] bg-opacity-60 p-8 rounded-xl text-center max-w-2xl mx-4">
+      <div className="bg-cover bg-center flex flex-col items-center justify-center text-white m-4" style={{ backgroundImage: "url('/fotoLocal.jpg')" }}>
+        <div className="bg-[#5E272D] bg-opacity-60 p-8 rounded-xl text-center max-w-2xl m-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Panificadora y Cafetería <span className="text-[#E6A55D]">Mathius</span>
           </h1>

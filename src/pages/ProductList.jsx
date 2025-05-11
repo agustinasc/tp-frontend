@@ -76,7 +76,7 @@ export const Products = () => {
         </button> 
       <div className="flex flex-wrap justify-center gap-6">
         {/* Card para Agregar Producto */}
-          {/* SOLO admins ven el botón para agregar productos */}
+          {/* SOLO admins y ventas ven el botón para agregar productos */}
         {(rol === "admin" || rol === "ventas") && (
           <div className={`${theme === "oscuro" ? "bg-[#3E3E3E]" : "bg-[#FAE5CF]"} flex flex-col items-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4 rounded-t-lg cursor-pointer hover:opacity-90`}>
             <Link to="/add-producto" className="flex flex-col items-center w-full h-full">

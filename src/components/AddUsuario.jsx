@@ -23,20 +23,7 @@ export const AddUsuario = () => {
     const { createUser } = useUser()
     const navigate = useNavigate()
 
-   /*  const handleSubmit = async (e) => {
-        e.preventDefault()
-        if (title.trim() === '' || image.trim() === '') {
-          setError('Por favor, llenar los campos')
-          return
-        }
-        try {
-            await createProduct({ title, image, price })
-            navigate('/productos')
-          } catch (err) {
-            setError('Error creando producto')
-            console.log('err -> ', err)
-          }
-    } */
+    
    const onSubmit = async (data) => {
     try {
       await createUser(data)
