@@ -36,7 +36,7 @@ export const routes = [
         path: '/contacto', element: <Contact />
     },
     {
-        path: '/productos', element: <Products />
+        path: 'api/productos', element: <Products />
     },
     {
         path: '/usuarios', element: <Usuarios />

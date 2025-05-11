@@ -52,7 +52,7 @@ export const Navbar = () => {
             )}
           </li>
           <li>
-            <Link to="/productos" className={`${theme === "oscuro" ? "text-white" : "text-black"} hover:text-yellow-800 font-semibold`}>Productos</Link>
+            <Link to="/api/productos" className={`${theme === "oscuro" ? "text-white" : "text-black"} hover:text-yellow-800 font-semibold`}>Productos</Link>
           </li>
           <li>
             <button onClick={openCart} className={`${theme === "oscuro" ? "text-white" : "text-black"} hover:text-yellow-800 font-semibold`}>
