@@ -8,7 +8,7 @@ export const CartContext = createContext();
 export const useProducts = () => useContext(CartContext)
 
 //const API = 'http://localhost:5000/api/productos'
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export const CartProvider = ({children}) => {
 
@@ -31,7 +31,7 @@ export const CartProvider = ({children}) => {
         const fetchProductos = async () => {
             try {
                 setLoading(true)
-              const response = await axios.get(API);
+              const response = await axios.get(`${API_BASE}`);
               setProducts(response.data); 
             } catch (error) {
               console.error('Error al traer productos:', error);
@@ -46,7 +46,7 @@ export const CartProvider = ({children}) => {
       /* PARA RECARGAR DESPUES DE ALGUNA MODIFICACION */
       const reloadProducts = async () => {
         try {
-          const response = await axios.get(API);
+          const response = await axios.get(`${API_BASE}`);
           setProducts(response.data);
         } catch (error) {
           console.error("Error al recargar productos", error);
@@ -137,7 +137,7 @@ export const CartProvider = ({children}) => {
 
   /* AGREGAR PRODUCTO A LA LISTA DE PRODUCTOS: POST */
   const createProduct = async (product) => {
-    const { data } = await axios.post(API, product)
+    const { data } = await axios.post(`${API_BASE}`, product)
     console.log('data ->', data);
     setProducts((prev) => [...prev, data])
     toast.success("Producto creado correctamente", { theme: "dark" })
@@ -146,7 +146,7 @@ export const CartProvider = ({children}) => {
     /* EDUTAR UN PRODUCTO A LA LISTA DE PRODUCTOS: PUT */
     const updateProduct = async (id, updateData) => {
       try {
-        await axios.put(`${API}/${id}`, updateData)
+        await axios.put(`${`${API_BASE}`}/${id}`, updateData)
         await reloadProducts()
         toast.success("Producto modificado correctamente", { theme: "dark" })
       } catch (error) {
@@ -158,7 +158,7 @@ export const CartProvider = ({children}) => {
     /* ELIMINAR UN PRODUCTO A LA LISTA DE PRODUCTOS: DELETE */
     const deleteProduct = async (id) => {
       try {
-        await axios.delete(`${API}/${id}`)
+        await axios.delete(`${`${API_BASE}`}/${id}`)
         await reloadProducts()
       } catch (error) {
         console.error("Error al eliminar el producto", error);
