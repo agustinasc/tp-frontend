@@ -123,7 +123,7 @@ export const Navbar = () => {
             <Link to="/nosotros" >Nosotros</Link>
           </li>
           <li className="text-lg text-white p-0.5 rounded-xl">
-            <Link to="api/productos" >Productos</Link>
+            <Link to="/api/productos" >Productos</Link>
           </li>
           <li className="text-lg text-white p-0.5 rounded-xl"><button onClick={openCart}><i className="bi bi-cart mr-1"></i> Ver Carrito</button></li>
           <li className="text-lg text-white p-0.5 rounded-xl">

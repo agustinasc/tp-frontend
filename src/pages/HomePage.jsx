@@ -12,7 +12,7 @@ const HomePage = () => {
     const handleClick = (rol) => {
         localStorage.setItem("rol", rol)
         if (rol === "cliente") {
-          navigate("/productos"); // o donde quieras que vaya el cliente
+          navigate("/api/productos"); // o donde quieras que vaya el cliente
         } else {
           navigate("/login");
         }
