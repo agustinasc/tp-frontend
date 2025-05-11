@@ -14,6 +14,7 @@ export const Footer = () =>{
                 <i className="bi bi-instagram text-2xl text-[#C13584] hover:text-pink-400"></i>
                 </a>
             </div>
+            <p className="mt-2 text-sm text-gray-400">Desarrollado por @AGUSTINA_SC</p>
             <p className="mt-2 text-sm text-gray-400">© 2025 Panificadora Mathius</p>
         </footer>
 
