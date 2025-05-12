@@ -17,11 +17,10 @@ export const Navbar = () => {
   const toggleMobileMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = () => setMenuOpen(!menuOpen);
   const toggleUserMenu = () => setUserMenuOpen(!userMenuOpen);
-  const closeMobileMenu = () => setIsOpen(false);
 
   const navLinkClass = `${theme === "oscuro" ? "text-white" : "text-black"} hover:text-yellow-800 font-semibold`;
 
-  return (
+ /*  return (
     <nav className={`w-full shadow-md z-50 ${theme === "oscuro" ? "bg-[#5B0601] bg-opacity-30" : "bg-[#eccac8] bg-opacity-30"}`}>
       <div className="flex justify-between items-center px-6 py-4">
         {/* Logo */}
@@ -146,5 +145,5 @@ export const Navbar = () => {
         </ul>
       )}
     </nav>
-  );
+  ); */
 };
