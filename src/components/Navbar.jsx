@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { useTheme } from "../context/ThemeContext";
@@ -14,12 +14,45 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
 
+  const dropdownRef = useRef(null)
+  const dropdownButtonRef = useRef(null)
+  const userMenuRef = useRef(null)
+  const userButtonRef = useRef(null)
+
   const toggleMobileMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = () => setMenuOpen(!menuOpen);
   const toggleUserMenu = () => setUserMenuOpen(!userMenuOpen);
   const closeMobileMenu = () => setIsOpen(false);
 
   const navLinkClass = `${theme === "oscuro" ? "text-white" : "text-black"} hover:text-yellow-800 font-semibold`;
+
+  /* para detectar clics fuera */
+  useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (
+      menuOpen &&
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target) &&
+      !dropdownButtonRef.current.contains(event.target)
+    ) {
+      setMenuOpen(false);
+    }
+
+    if (
+      userMenuOpen &&
+      userMenuRef.current &&
+      !userMenuRef.current.contains(event.target) &&
+      !userButtonRef.current.contains(event.target)
+    ) {
+      setUserMenuOpen(false);
+    }
+  };
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, [menuOpen, userMenuOpen]);
+
 
   return (
     <nav className={`w-full shadow-md z-50 ${theme === "oscuro" ? "bg-[#5B0601] bg-opacity-30" : "bg-[#eccac8] bg-opacity-30"}`}>
@@ -31,6 +64,7 @@ export const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
+
         <ul className="hidden md:flex items-center gap-6">
           <li>
             <Link to="/" className={navLinkClass}>Inicio</Link>
@@ -39,6 +73,7 @@ export const Navbar = () => {
           <li className="relative">
             <button
               onClick={toggleDropdown}
+              ref={dropdownButtonRef}
               className={navLinkClass}
               aria-expanded={menuOpen}
               aria-controls="dropdown-menu"
@@ -46,10 +81,11 @@ export const Navbar = () => {
               Menú <i className="bi bi-chevron-down ml-1"></i>
             </button>
             {menuOpen && (
-              <ul id="dropdown-menu" className="absolute left-0 mt-2 w-40 rounded shadow bg-white z-10">
+              <ul id="dropdown-menu"  ref={dropdownRef} className="absolute left-0 mt-2 w-40 rounded shadow bg-white z-10">
                 <li><Link to="/nosotros" className="block px-4 py-2 hover:bg-gray-100">Nosotros</Link></li>
                 <li><Link to="/contacto" className="block px-4 py-2 hover:bg-gray-100">Contacto</Link></li>
-                <li><Link to="/perfil" className="block px-4 py-2 hover:bg-gray-100">Perfiles</Link></li>
+                <li><Link to="/ubicacion" className="block px-4 py-2 hover:bg-gray-100">Ubicacion</Link></li>
+                {/* <li><Link to="/perfil" className="block px-4 py-2 hover:bg-gray-100">Perfiles</Link></li> */}
               </ul>
             )}
           </li>
@@ -69,6 +105,7 @@ export const Navbar = () => {
               <>
                 <button
                   onClick={toggleUserMenu}
+                  ref={userButtonRef}
                   className={`${navLinkClass} flex items-center gap-1`}
                   aria-expanded={userMenuOpen}
                   aria-controls="user-menu"
@@ -76,7 +113,7 @@ export const Navbar = () => {
                   <i className="bi bi-person-circle"></i> {user.usuario}
                 </button>
                 {userMenuOpen && (
-                  <ul id="user-menu" className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md z-10">
+                  <ul id="user-menu"  ref={userMenuRef} className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-md z-10">
                     <li>
                       <button onClick={openCart} className="block w-full text-left px-4 py-2 hover:bg-gray-100">
                         🛒 Ver Carrito

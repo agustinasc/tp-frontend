@@ -50,6 +50,7 @@ const Nosotros = () => {
       <button
         onClick={() => navigate(-1)}
       >
+        <i className="bi bi-arrow-left-circle-fill text-xl m-2"></i>
         Volver atras
       </button>
     </section>
