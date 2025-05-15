@@ -7,7 +7,7 @@ const Nosotros = () => {
   return (
     <section className="bg-[#5E272D] text-white py-12 px-6 md:px-20">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-[#E6A55D] mb-8 text-center">
+        <h2 className="text-6xl font-bold mb-4">
           Nuestra historia
         </h2>
 
@@ -15,18 +15,18 @@ const Nosotros = () => {
           {/* Texto */}
           <div>
             <p className="text-lg leading-relaxed">
-              Desde Julio de 1993, somos una panadería y cafetería familiar con una sola misión:
-              llevar a la mesa de cada catamarqueño productos frescos, artesanales y hechos con amor.
+              Desde Julio de 1993, somos una panadería y cafetería familiar ☕ con una sola misión:
+              llevar a la mesa de cada catamarqueño productos frescos, artesanales y hechos con amor.❤️
             </p>
             <p className="mt-4 text-lg leading-relaxed">
-              Con el paso del tiempo, nos convertimos en la panadería del barrio: un lugar donde el
-              aroma del pan recién horneado se mezcla con la calidez de quienes nos eligen cada día.
+              Con el paso del tiempo ⏱️, nos convertimos en la panadería del barrio: un lugar donde el
+              aroma del pan recién horneado se mezcla con la calidez de quienes nos eligen cada día.🌞
             </p>
             <p className="mt-4 text-lg leading-relaxed">
               Nuestro equipo está formado por trabajadores catamarqueños que comparten la pasión por
-              lo artesanal y el compromiso de ofrecer siempre lo mejor. Gracias por ser parte de esta
+              lo artesanal y el compromiso de ofrecer siempre lo mejor😉. Gracias por ser parte de esta
               historia. Esperamos seguir acompañando cada desayuno, cada merienda, cada momento
-              compartido… siendo parte de tu mesa, como desde el primer día.
+              compartido… siendo parte de tu mesa, como desde el primer día. 🥖
             </p>
           </div>
 
