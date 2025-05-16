@@ -9,12 +9,12 @@ const Contact = () => {
  
   const [state, handleSubmit] = useForm("mwpoaozq");
 
-  return (
-  /*   <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <h1 className="text-3xl font-bold text-[#5B0601]">Contacto</h1>
-      <p className="text-lg mt-2 text-gray-700">Podés contactarnos al 📞 1234-5678 o por mail 📧 panaderia@ejemplo.com</p>
-    </div> */
+  return (    
     <div>
+      <Helmet>
+        <title>Contacto | Panificadora y Panaderia Mathius</title>
+        <meta name="description" content="Contactanos para hacer pedidos o consultar productos. Estamos en Catamarca." />
+      </Helmet>
       <div className={`flex items-center justify-center p-6 mt-8 ${theme === "oscuro" ? "bg-[#320301] text-white bg-opacity-30" : "bg-[#FAE5CF] text-[#5B0601] bg-opacity-30"}`}>
         
          {/* Horarios */}

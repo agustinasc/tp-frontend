@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { useTheme } from "../context/ThemeContext";
 import { useUser } from "../context/UserContext";
-import logo from '../assets/logo2.png';
+import logo from '/logo2.png';
 
 export const Navbar = () => {
   const { openCart } = useContext(CartContext);

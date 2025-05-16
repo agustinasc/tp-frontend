@@ -7,7 +7,7 @@ import  { Navbar }  from './components/Navbar'
 import { CartContext } from './context/CartContext'
 import { useRoutes } from 'react-router-dom'
 import { Footer } from './components/Footer.jsx'
-import { Helmet } from "react-helmet"
+import SeoLogo from './components/SeoLogo.jsx'
 
 
 
@@ -19,14 +19,7 @@ function App() {
 
   return (
     <>
-      <Helmet>
-          <meta
-            name="google-site-verification"
-            content="B6rnbFug4UvuiH3s-FeAiNhYhb_JOGiNQtijBOqZdKA"
-          />
-          <title>Panificadora Mathius | Pan artesanal en Catamarca</title>
-          <meta name="description" content="Panificadora y Panadería artesanal en Catamarca. Productos frescos, facturas, panes artesanales y más. ¡Visitanos!" />
-        </Helmet>
+      <SeoLogo />
       <Navbar openCart={openCart}/>
       { routing }
       {isCartOpen && <Cart closeCart={closeCart}/>}

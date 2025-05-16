@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
 import {ThemeContext} from "../context/ThemeContext"
-import logo2 from "../assets/logo2.png"
+import logo2 from "/logo2.png"
 
 
 
