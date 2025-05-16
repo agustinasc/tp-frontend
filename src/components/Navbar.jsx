@@ -158,6 +158,9 @@ export const Navbar = () => {
             <Link to="/nosotros" onClick={closeMobileMenu}>Nosotros</Link>
           </li>
           <li className="text-lg text-white py-1">
+            <Link to="/ubicacion" onClick={closeMobileMenu}>Ubicacion</Link>
+          </li>
+          <li className="text-lg text-white py-1">
             <Link to="/api/productos" onClick={closeMobileMenu}>Productos</Link>
           </li>
           <li className="text-lg text-white py-1">
