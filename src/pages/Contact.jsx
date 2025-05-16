@@ -1,7 +1,7 @@
 import { useTheme } from "../context/ThemeContext";
 import { Link } from 'react-router-dom'
 import { useForm } from '@formspree/react';
-
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
 
