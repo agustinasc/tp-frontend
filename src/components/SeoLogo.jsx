@@ -5,7 +5,7 @@ const SeoLogo = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "url": "https://mathius.com.ar",
-    "logo": "https://mathius.com.ar/logo.png"
+    "logo": "https://mathius.com.ar/logo2.png"
   };
 
   return (

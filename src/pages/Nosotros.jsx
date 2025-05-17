@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { Helmet } from "react-helmet"
+import * as motion from "motion/react-client"
 
 const Nosotros = () => {
   const navigate = useNavigate()
@@ -44,20 +45,33 @@ const Nosotros = () => {
               </p>
             </div>
 
-            {/* Foto 1 */}
-            <div className="flex flex-col gap-6">
-              <img
-                src="/nosotros2.jpeg"
-                alt="Personal de la panadería"
-                className="rounded-2xl shadow-lg object-cover h-64 w-full"
-              />
-              {/* Foto 2 */}
-              <img
-                src="/nosotros3.jpg"
-                alt="Nuestro Equipo"
-                className="rounded-2xl shadow-lg object-cover h-64 w-full"
-              />
-            </div>
+    <div className="flex flex-col gap-6">
+          {/* Foto 1 */}
+          <motion.div
+            whileHover={{ scale: 1.10 }}
+            whileTap={{ scale: 0.95 }}
+            className="rounded-2xl shadow-lg overflow-hidden"
+          >
+            <img
+              src="/nosotros2.jpeg"
+              alt="Personal de la panadería"
+              className="object-cover h-64 w-full"
+            />
+          </motion.div>
+
+          {/* Foto 2 */}
+          <motion.div
+            whileHover={{ scale: 1.10 }}
+            whileTap={{ scale: 0.95 }}
+            className="rounded-2xl shadow-lg overflow-hidden"
+          >
+            <img
+              src="/nosotros3.jpg"
+              alt="Nuestro Equipo"
+              className="object-cover h-64 w-full"
+            />
+          </motion.div>
+        </div>
           </div>
         </div>
         

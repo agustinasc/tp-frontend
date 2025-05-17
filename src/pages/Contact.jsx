@@ -50,7 +50,9 @@ const Contact = () => {
                         ? "bg-[#1f1f1f] text-white border-gray-600 placeholder-gray-400"
                         : "bg-white text-black border-gray-300 placeholder-gray-500"}`}
           >
-          <h2 className="text-2xl font-bold text-[#5B0601]">Solicitar Cotización</h2>
+          <h2 className="text-2xl font-bold text-gray-500">
+            Solicitar Cotización
+          </h2>
 
           <input
             type="text"

@@ -60,7 +60,7 @@ export const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img src={logo} alt="Logo" className="w-12 sm:w-20 rounded-full" />
-          <p className={`text-xl font-bold ${theme === "oscuro" ? "text-white" : "text-[#5B0601]"}`}>PANIFICADORA MATHIUS</p>
+          <p className={`text-xl font-bold ${theme === "oscuro" ? "text-white" : "text-[#5B0601]"}`}>Panaderia Mathiu's</p>
         </div>
 
         {/* Desktop Navigation */}
