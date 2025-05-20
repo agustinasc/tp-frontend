@@ -14,16 +14,18 @@ const position = [-28.472412, -65.782536]; // Coordenadas
 
 export default function MapaPanaderia() {
   return (
-    <MapContainer center={position} zoom={15} style={{ height: '400px', width: '100%' }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; OpenStreetMap contributors'
-      />
-      <Marker position={position}>
-        <Popup>
-          ¡Aquí está tu panadería!
-        </Popup>
-      </Marker>
-    </MapContainer>
+    <div className='relative z-0'>
+      <MapContainer center={position} zoom={15} style={{ height: '400px', width: '100%' }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; OpenStreetMap contributors'
+        />
+        <Marker position={position}>
+          <Popup>
+            ¡Aquí está tu panadería!
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </div>
   );
 }

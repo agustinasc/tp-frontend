@@ -2,7 +2,8 @@ import { useTheme } from "../context/ThemeContext";
 import { Link } from 'react-router-dom'
 import { useForm } from '@formspree/react';
 import { Helmet } from "react-helmet";
-import Ubicacion from './Ubicacion'
+import MapaPanaderia from "../components/MapaPanaderia"
+import 'leaflet/dist/leaflet.css';
 
 const Contact = () => {
 
@@ -12,7 +13,7 @@ const Contact = () => {
 
   return (    
     <div>
-                      {/* Helmet: SEO y metadatos */}
+        {/* Helmet: SEO y metadatos */}
       <Helmet>
         <title>Contacto | Panificadora y Panaderia Mathius</title>
         <meta name="description" content="Contactanos para hacer pedidos o consultar disponibilidad de productos. Estamos en Catamarca." />
@@ -67,7 +68,10 @@ const Contact = () => {
                 {/* Mapa de ubicación */}
           <section className="flex-[3] p-8 rounded-2xl shadow-md bg-white">
             <h2 className="text-4xl font-bold mb-4 text-center">Dónde estamos</h2>
-            <Ubicacion />
+              
+            <div className={`min-h-[300px] items-center justify-center p-6 mt-8 ${theme === "oscuro" ? "bg-[#320301] text-white bg-opacity-30" : "bg-[#FAE5CF] text-[#5B0601] bg-opacity-30"}`}>
+                <MapaPanaderia />
+            </div>
           </section>
         </div>
 

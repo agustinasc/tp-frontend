@@ -12,7 +12,6 @@ import HomePage from '../pages/HomePage'
 import { AddUsuario } from '../components/AddUsuario'
 import Usuarios  from '../pages/Usuarios'
 import { EditUsuario } from '../components/EditUsuario'
-import Ubicacion from '../pages/Ubicacion'
 
 
 
@@ -41,9 +40,6 @@ export const routes = [
     },
     {
         path: '/usuarios', element: <Usuarios />
-    },
-    {
-        path: '/ubicacion', element: <Ubicacion />
     },
 
     

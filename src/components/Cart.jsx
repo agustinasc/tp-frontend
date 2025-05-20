@@ -15,7 +15,7 @@ export const Cart = () => {
   <>
     {/* Fondo oscurecido (click para cerrar) */}
     <div
-      className={`fixed inset-0 z-40 ${theme === "oscuro" ? "bg-black bg-opacity-60" : "bg-[#034b1f]/30  backdrop-blur-sm"}`}
+      className={`fixed inset-0 z-50 ${theme === "oscuro" ? "bg-black bg-opacity-60" : "bg-[#034b1f]/30  backdrop-blur-sm"}`}
       onClick={closeCart}
     />
 
