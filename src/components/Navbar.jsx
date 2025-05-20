@@ -20,7 +20,6 @@ export const Navbar = () => {
   const userButtonRef = useRef(null)
 
   const toggleMobileMenu = () => setIsOpen(!isOpen);
-  const toggleDropdown = () => setMenuOpen(!menuOpen);
   const toggleUserMenu = () => setUserMenuOpen(!userMenuOpen);
   const closeMobileMenu = () => setIsOpen(false);
 
@@ -57,42 +56,20 @@ export const Navbar = () => {
   return (
     <nav className={`w-full shadow-md z-50 ${theme === "oscuro" ? "bg-[#5B0601] bg-opacity-30" : "bg-[#eccac8] bg-opacity-30"}`}>
       <div className="flex justify-between items-center px-6 py-4">
+
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img src={logo} alt="Logo" className="w-12 sm:w-20 rounded-full" />
-          <p className={`text-xl font-bold ${theme === "oscuro" ? "text-white" : "text-[#5B0601]"}`}>Panaderia Mathiu's</p>
+          <h2 className={`text-2xl font-bold ${theme === "oscuro" ? "text-white" : "text-[#5B0601]"}`}>Panaderia</h2>
         </div>
 
         {/* Desktop Navigation */}
 
         <ul className="hidden md:flex items-center gap-6">
-          <li>
-            <Link to="/" className={navLinkClass}>Inicio</Link>
-          </li>
-
-          <li className="relative">
-            <button
-              onClick={toggleDropdown}
-              ref={dropdownButtonRef}
-              className={navLinkClass}
-              aria-expanded={menuOpen}
-              aria-controls="dropdown-menu"
-            >
-              Menú <i className="bi bi-chevron-down ml-1"></i>
-            </button>
-            {menuOpen && (
-              <ul id="dropdown-menu"  ref={dropdownRef} className="absolute left-0 mt-2 w-40 rounded shadow bg-white z-10">
-                <li><Link to="/nosotros" className="block px-4 py-2 hover:bg-gray-100">Nosotros</Link></li>
-                <li><Link to="/contacto" className="block px-4 py-2 hover:bg-gray-100">Contacto</Link></li>
-                <li><Link to="/ubicacion" className="block px-4 py-2 hover:bg-gray-100">Ubicacion</Link></li>
-                {/* <li><Link to="/perfil" className="block px-4 py-2 hover:bg-gray-100">Perfiles</Link></li> */}
-              </ul>
-            )}
-          </li>
-
-          <li>
-            <Link to="/api/productos" className={navLinkClass}>Productos</Link>
-          </li>
+          <li><Link to="/" className={navLinkClass}>Inicio</Link></li>
+          <li><Link to="/nosotros" className={navLinkClass}>Nosotros</Link></li>
+          <li><Link to="/contacto" className={navLinkClass}>Contacto</Link></li>
+          <li><Link to="/api/productos" className={navLinkClass}>Productos</Link></li>
 
           <li>
             <button onClick={openCart} className={navLinkClass}>
@@ -128,15 +105,16 @@ export const Navbar = () => {
                 )}
               </>
             ) : (
-              <Link to="/login" className="text-blue-400 hover:underline">Login</Link>
+              <Link to="/login" className="text-blue-600 hover:underline">Login</Link>
             )}
           </li>
 
+        {/*   BOTON CLARO/OSCURO
           <li>
             <button onClick={toggleTheme} className="ml-4">
               <i className={`bi ${theme === "oscuro" ? "bi-sun text-white hover:text-yellow-400" : "bi-moon-fill text-black hover:text-yellow-800"} text-xl`}></i>
             </button>
-          </li>
+          </li> */}
         </ul>
 
         {/* Mobile Menu Button */}
@@ -156,9 +134,6 @@ export const Navbar = () => {
           </li>
           <li className="text-lg text-white py-1">
             <Link to="/nosotros" onClick={closeMobileMenu}>Nosotros</Link>
-          </li>
-          <li className="text-lg text-white py-1">
-            <Link to="/ubicacion" onClick={closeMobileMenu}>Ubicacion</Link>
           </li>
           <li className="text-lg text-white py-1">
             <Link to="/api/productos" onClick={closeMobileMenu}>Productos</Link>
