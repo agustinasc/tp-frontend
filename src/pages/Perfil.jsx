@@ -38,7 +38,7 @@ const Perfil = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <button 
                 className="flex items-center gap-2 px-6 py-3 rounded-lg bg-cyan-800 text-white hover:bg-cyan-600 transition"
-                onClick={() => navigate('/productos')}
+                onClick={() => navigate('api/productos')}
               >
                 <i className="bi bi-box-seam text-lg"></i>
                 Ver Productos
