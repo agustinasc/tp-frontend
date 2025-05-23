@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { useTheme } from "../context/ThemeContext";
 import { useUser } from "../context/UserContext";
@@ -52,6 +52,8 @@ export const Navbar = () => {
   };
 }, [menuOpen, userMenuOpen]);
 
+  const navigate = useNavigate();
+
 
   return (
     <nav className={`w-full shadow-md z-50 ${theme === "oscuro" ? "bg-[#5B0601] bg-opacity-30" : "bg-[#eccac8] bg-opacity-30"}`}>
@@ -94,6 +96,11 @@ export const Navbar = () => {
                     <li>
                       <button onClick={openCart} className="block w-full text-left px-4 py-2 hover:bg-gray-100">
                         🛒 Ver Carrito
+                      </button>
+                    </li>
+                    <li>
+                      <button onClick={()=> navigate('/perfil')} className="block w-full text-left px-4 py-2 hover:bg-gray-100">
+                        Mi Perfil
                       </button>
                     </li>
                     <li>
