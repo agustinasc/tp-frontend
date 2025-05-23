@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import Loader from "../components/Loader";
 import { useUser } from "../context/UserContext"
-import { useNavigate } from 'react-router-dom'
 import { Helmet } from "react-helmet"
 
 export const Products = () => {
@@ -14,7 +13,6 @@ export const Products = () => {
   const { theme } = useContext(ThemeContext);
   const [search, setSearch] = useState('');
   const [selectedCategoria, setSelectedCategoria] = useState('');
-  const navigate = useNavigate();
 
   const filteredProducts = products.filter(product => {
     const matchNombre = product.nombre.toLowerCase().includes(search.toLowerCase());
@@ -37,9 +35,9 @@ export const Products = () => {
         />
       </Helmet>
 
-      <div className={`p-4  ${theme === "oscuro" ? " bg-[#2D2D2D]" : "p-4"}`}>
+      <div className={`p-4 ${theme === "oscuro" ? "bg-[#2D2D2D]" : "bg-white"}`}>
         <div className="flex flex-col sm:flex-row sm:items-end gap-4">
-          <h2 className={`font-semibold text-lg ${theme === "oscuro" ? " text-white" : "text-[#5B0601]"}`}>Busqueda de Productos: </h2>
+          <h2 className={`font-semibold text-lg ${theme === "oscuro" ? " text-white" : "text-[#5B0601]"}`}>Búsqueda de Productos: </h2>
           <input
             type="text"
             placeholder="Buscar por nombre"
@@ -62,13 +60,13 @@ export const Products = () => {
             }`}
           >
             <option value="">Todas las categorías</option>
-            <option value="Panaderia">Panaderia</option>
-            <option value="Pasteleria">Pasteleria</option>
-            <option value="Bolleria">Bolleria</option>
+            <option value="Panaderia">Panadería</option>
+            <option value="Pasteleria">Pastelería</option>
+            <option value="Bolleria">Bollería</option>
             <option value="Especiales">Especiales</option>
           </select>
           <button 
-            className={`px-6 py-2 rounded font-semibold transition duration-300
+            className={`px-6 py-2 rounded font-semibold transition duration-300 whitespace-nowrap 
               ${theme === "oscuro"
                 ? "bg-cyan-500 hover:bg-cyan-800 text-white"
                 : "bg-cyan-800 hover:bg-cyan-400 text-white"}
@@ -79,16 +77,10 @@ export const Products = () => {
 
         </div>
 
-        <h1 className={`text-3xl font-semibold text-center mb-8 ${theme === "oscuro" ? "text-[#FAE5CF]" : "text-[#5B0601]"}`}>
+        <h1 className={`text-4xl font-semibold text-center m-8 ${theme === "oscuro" ? "text-[#FAE5CF]" : "text-[#5B0601]"}`}>
           Lista de Productos
         </h1>
-        <button
-            onClick={() => navigate(-1)}
-            className={`flex items-center gap-2 px-4 py-2 rounded transition duration-300 ${theme === "oscuro" ? "text-[#FAE5CF]" : "text-[#5B0601]"}`}
-          >
-            <i className="bi bi-arrow-left-circle-fill text-xl"></i>
-            Volver Atras
-          </button> 
+
         <div className="flex flex-wrap justify-center gap-6">
           {/* Card para Agregar Producto */}
             {/* SOLO admins y ventas ven el botón para agregar productos */}

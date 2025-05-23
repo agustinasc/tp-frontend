@@ -61,54 +61,78 @@ export const ProductDetails = () => {
     }
   
     return (
-        <div className={`flex flex-col items-center m-6 sm:px-6 lg:px-8  ${theme === "oscuro" ? "bg-[#5B0601] bg-opacity-30" : "bg-[#eccac8] bg-opacity-30"}`}>
+            <div
+            className="flex flex-col items-center justify-center m-8 sm:px-10 lg:px-20">
+                <div className=" bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-8">
+                    
+                    {/* Columna de imagen */}
+                    <div className="flex-shrink-0">
+                    <img
+                        src={product.imagen}
+                        alt={product.nombre}
+                        className="max-w-md w-full object-cover rounded-xl shadow-md mx-auto md:mx-0"
+                        loading="lazy"
+                    />
+                    </div>
 
-            <div className=" flex flex-col items-center text-center bg-white p-6 m-6 rounded-xl shadow-lg ">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">{product.nombre}</h2>
-                <img 
-                    src={product.imagen } 
-                    alt={product.nombre } 
-                    className="max-w-sm w-full h-auto mb-4 mx-auto rounded" 
-                />
-                <p className="mb-2 text-gray-700">{product.descripcion}</p>
-                <p className="mb-4 font-semibold text-lg text-gray-800">Precio: ${product.precio}</p>
-                <p className="mb-4 font-semibold text-lg text-gray-800">Categoria: {product.categoria}</p>
-                <div>
-                    <button 
-                    className="bg-[#5E272D] hover:bg-green-700 text-white px-4 py-2 rounded m-2"
-                    onClick={() => addToCart(product)}
-                    >
-                    Agregar al carrito
-                    </button>
-                
-                    {(rol === 'admin' || rol === 'ventas') && (
-                        <div>
-                            <button 
-                            className="bg-indigo-800 hover:bg-indigo-500 text-white px-4 py-2 rounded m-2"
+                    {/* Columna de contenido */}
+                    <div className="flex flex-col justify-between">
+                    <div>
+                        <h2 className="text-3xl font-extrabold mb-4 text-white">{product.nombre}</h2>
+                        <p className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                        {product.descripcion}
+                        </p>
+                        <p className="mb-2 text-xl font-semibold text-white">
+                        Precio: <span className="text-green-600">${product.precio}</span>
+                        </p>
+                        <p className="mb-6 text-lg font-medium text-gray-600 dark:text-gray-400">
+                        Categoría: {product.categoria}
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-4">
+                        <button
+                        className="bg-[#5e363b] hover:bg-green-700 text-white px-5 py-3 rounded-lg shadow-md transition-colors duration-300 flex items-center gap-2"
+                        onClick={() => addToCart(product)}
+                        >
+                        Agregar al carrito
+                        <i className="bi bi-cart-fill"></i> 
+                        </button>
+
+                        {(rol === "admin" || rol === "ventas") && (
+                        <>
+                            <button
+                            className="bg-indigo-800 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg shadow"
                             onClick={() => navigate(`/producto/${id}/edit`)}
                             >
                             Editar producto
                             </button>
-                            <button 
-                            className="bg-rose-800 hover:bg-rose-500 text-white px-4 py-2 rounded m-2"
+                            <button
+                            className="bg-rose-800 hover:bg-rose-500 text-white px-4 py-2 rounded-lg shadow"
                             onClick={handleDelete}
                             >
                             Eliminar producto
                             </button>
-
-                        </div>
-                    )}
+                        </>
+                        )}
+                    </div>
+                    </div>
                 </div>
+
+            {/* Botón de volver */}
+                <button
+                    className={`mt-10 flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-colors duration-300 ${
+                    theme === "oscuro"
+                        ? "text-white hover:text-cyan-400"
+                        : "text-gray-800 hover:text-cyan-600"
+                    }`}
+                    onClick={() => navigate(-1)}
+                >
+                    <i className="bi bi-arrow-left-circle-fill text-xl"></i>
+                    Volver atrás
+                </button>
             </div>
 
-            <button
-            className={`flex items-center gap-2 px-4 py-2 rounded transition duration-300 ${theme === "oscuro" ? "text-white" : "text-black"}`}
-            onClick={() => navigate(-1)}
-            >
-                <i className="bi bi-arrow-left-circle-fill text-xl"></i>
-                Volver atras
-            </button>
-        </div>
     );
 };
   
