@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /login/
+
+Sitemap: https://mathius.com.ar/sitemap.xml
