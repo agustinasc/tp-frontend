@@ -101,6 +101,55 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
+      {/* Servicios y Productos */}
+      <div className="mt-16 p-8 bg-[#FFF1E6] text-[#5E272D] rounded-2xl shadow-md max-w-6xl mx-auto">
+        <h3 className="text-4xl font-bold mb-6 text-center">Servicios y Productos</h3>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Servicio 1 */}
+          <div className="bg-white rounded-xl shadow-lg p-4 text-center hover:scale-105 transition-transform">
+            <img src="/produccion.jpeg" alt="Servicio de catering" className="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 className="text-2xl font-semibold mb-2">Catering artesanal</h4>
+            <p className="text-lg">Llevamos nuestros sabores a tus eventos con propuestas únicas y frescas.</p>
+          </div>
+
+          {/* Servicio 2 */}
+          <div className="bg-white rounded-xl shadow-lg p-4 text-center hover:scale-105 transition-transform">
+            <img src="/panadero.jpeg" alt="Producción para cafeterías" className="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 className="text-2xl font-semibold mb-2">Producción para terceros</h4>
+            <p className="text-lg">Ofrecemos productos a panaderías y cafeterías que buscan calidad y sabor casero.</p>
+          </div>
+
+          {/* Servicio 3 */}
+          <div className="bg-white rounded-xl shadow-lg p-4 text-center hover:scale-105 transition-transform">
+            <img src="/cafeteria.jpg" alt="Nuestra cafetería" className="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 className="text-2xl font-semibold mb-2">Cafetería</h4>
+            <p className="text-lg">Te esperamos con un ambiente cálido y nuestros clásicos recién horneados.</p>
+          </div>
+        </div>
+      </div>
+
+            {/* CTA Final */}
+      <div className="mt-16 text-center bg-[#FFD6C2] py-12 px-6 rounded-2xl shadow-lg">
+        <h3 className="text-4xl font-bold text-[#5E272D] mb-4">¿Todavía no nos conocés?</h3>
+        <p className="text-lg md:text-xl text-[#5E272D] mb-6">
+          Vení a degustar lo que hacemos con tanto amor en nuestra cafetería o hacé tu pedido para llevar el sabor artesanal a tu mesa. 🥐☕
+        </p>
+        <div className="flex flex-col md:flex-row gap-4 justify-center">
+          <a
+            href="/contacto"
+            className="bg-[#5E272D] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#3b1a1f] transition"
+          >
+            Hacé tu pedido
+          </a>
+          <a
+            href="/contacto"
+            className="border-2 border-[#5E272D] text-[#5E272D] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#5E272D] hover:text-white transition"
+          >
+            Visitános
+          </a>
+        </div>
+      </div>
 
     </>
   )

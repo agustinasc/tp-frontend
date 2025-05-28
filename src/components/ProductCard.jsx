@@ -31,9 +31,9 @@ const ProductCard = React.memo(({ product, addToCart }) => {
       <h3 className={`text-xl font-semibold text-center mt-2 ${theme === "oscuro" ? "text-2xl font-semibold text-white" : "text-2xl font-semibold text-[#5B0601]"}`}>
         {product.nombre}
       </h3>
-      <p className={`text-lg font-bold ${theme === "oscuro" ? "text-xl font-bold text-white mb-2" : "text-xl font-bold text-[#5B0601] mb-2"}`}>
+      {/* <p className={`text-lg font-bold ${theme === "oscuro" ? "text-xl font-bold text-white mb-2" : "text-xl font-bold text-[#5B0601] mb-2"}`}>
         ${product.precio}
-      </p>
+      </p> */}
 
       {/* BOTONES */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mt-2 w-full">
